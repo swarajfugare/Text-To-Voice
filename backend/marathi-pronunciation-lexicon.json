@@ -1,0 +1,16 @@
+[
+  { "source": "AI", "spoken": "ए आय" },
+  { "source": "API", "spoken": "ए पी आय" },
+  { "source": "CPU", "spoken": "सी पी यू" },
+  { "source": "GPU", "spoken": "जी पी यू" },
+  { "source": "MP3", "spoken": "एम पी थ्री" },
+  { "source": "OpenAI", "spoken": "ओपन ए आय" },
+  { "source": "TextVoice", "spoken": "टेक्स्ट व्हॉइस" },
+  { "source": "TTS", "spoken": "टी टी एस" },
+  { "source": "URL", "spoken": "यू आर एल" },
+  { "source": "UTF-8", "spoken": "यू टी एफ एट" },
+  { "source": "WhatsApp", "spoken": "व्हॉट्सअॅप" },
+  { "source": "YouTube", "spoken": "यूट्यूब" },
+  { "source": "Instagram", "spoken": "इंस्टाग्राम" },
+  { "source": "Google", "spoken": "गूगल" }
+]

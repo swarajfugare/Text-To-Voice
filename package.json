@@ -1,0 +1,31 @@
+{
+  "name": "text-voice",
+  "version": "1.0.0",
+  "description": "Modern Marathi text-to-speech web application powered by Node.js and Edge neural voices.",
+  "main": "backend/server.js",
+  "scripts": {
+    "dev": "nodemon backend/server.js",
+    "start": "node backend/server.js",
+    "check": "node --check backend/server.js"
+  },
+  "keywords": [
+    "marathi",
+    "text-to-speech",
+    "tts",
+    "express",
+    "ai-voice"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "multer": "^2.1.1",
+    "node-edge-tts": "^1.2.10"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

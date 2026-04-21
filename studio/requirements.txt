@@ -1,0 +1,7 @@
+git+https://github.com/dubverse-ai/MahaTTS.git
+torch
+librosa
+lameenc
+numpy
+soundfile
+requests

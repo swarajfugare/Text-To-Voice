@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TextVoice AI | Marathi Text to Speech</title>
+    <meta
+      name="description"
+      content="Convert Marathi text into realistic human-like speech with a modern AI-style interface."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./config.js"></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="orb orb-one"></div>
+      <div class="orb orb-two"></div>
+      <div class="grid-glow"></div>
+
+      <header class="topbar">
+        <div class="brand-lockup">
+          <div class="brand-mark">TV</div>
+          <div>
+            <p class="eyebrow">Marathi AI Voice Studio</p>
+            <h1>TextVoice AI</h1>
+          </div>
+        </div>
+        <div class="topbar-pill">UTF-8 Ready • Studio Clone + Fast Neural</div>
+      </header>
+
+      <main class="layout">
+        <section class="hero-card glass-card">
+          <div class="hero-copy">
+            <span class="section-chip">Modern Marathi Text to Speech</span>
+            <h2>Turn Marathi text into expressive, human-like audio in seconds.</h2>
+            <p>
+              Built for Marathi Unicode text with a new studio cloning mode,
+              fast preview voices, instant playback, and one-click download.
+            </p>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric-card">
+              <span>Engines</span>
+              <strong>Studio + Fast</strong>
+            </div>
+            <div class="metric-card">
+              <span>Character limit</span>
+              <strong>2,000</strong>
+            </div>
+            <div class="metric-card">
+              <span>Audio format</span>
+              <strong>MP3</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="workspace">
+          <div class="panel glass-card composer-panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Compose</p>
+                <h3>Create Marathi speech</h3>
+              </div>
+              <span id="statusBadge" class="status-badge">Ready</span>
+            </div>
+
+            <div class="sample-row">
+              <button
+                class="sample-chip"
+                type="button"
+                data-sample="नमस्कार! आपल्या मराठी आवाज जनरेटरमध्ये आपले स्वागत आहे."
+              >
+                Greeting sample
+              </button>
+              <button
+                class="sample-chip"
+                type="button"
+                data-sample="आजचा हवामान अहवाल: पुण्यात हलका पाऊस आणि तापमान तेवीस अंश सेल्सियस आहे."
+              >
+                News sample
+              </button>
+              <button
+                class="sample-chip"
+                type="button"
+                data-sample="कृपया पुढील सूचना काळजीपूर्वक ऐका आणि सुरक्षिततेचे सर्व नियम पाळा."
+              >
+                Announcement sample
+              </button>
+            </div>
+
+            <div class="field mode-field">
+              <span>Rendering engine</span>
+              <div id="engineOptions" class="engine-grid" role="radiogroup" aria-label="Rendering engine"></div>
+              <p id="engineHelper" class="helper-text">
+                Studio mode gets closest to a real human voice, but it needs a clean WAV reference sample.
+              </p>
+            </div>
+
+            <form id="ttsForm" class="tts-form">
+              <label class="field textarea-field" for="textInput">
+                <span>Marathi text</span>
+                <textarea
+                  id="textInput"
+                  maxlength="2000"
+                  placeholder="इथे मराठी मजकूर टाका... उदाहरण: नमस्कार, हा एक आधुनिक मराठी टेक्स्ट-टू-स्पीच डेमो आहे."
+                  required
+                ></textarea>
+              </label>
+
+              <div class="counter-row">
+                <p class="helper-text">Supports Marathi Unicode. Keep your script natural for the best voice quality.</p>
+                <span id="charCounter" class="char-counter">0 / 2000</span>
+              </div>
+
+              <div class="pronunciation-panel">
+                <div class="reference-head">
+                  <div>
+                    <strong>Pronunciation hints</strong>
+                    <p class="helper-text">
+                      Fix difficult words by writing one rule per line in the format
+                      <code>word=spoken form</code>. Example: <code>API=ए पी आय</code> or
+                      <code>ऑर्डर=ऑरडर</code>.
+                    </p>
+                  </div>
+                </div>
+                <label class="field" for="pronunciationHints">
+                  <span>Optional word-level corrections</span>
+                  <textarea
+                    id="pronunciationHints"
+                    class="hint-textarea"
+                    placeholder="उदाहरण:
+ऑर्डर=ऑरडर
+TextVoice=टेक्स्ट व्हॉइस
+API=ए पी आय"
+                  ></textarea>
+                </label>
+              </div>
+
+              <div id="referenceSection" class="reference-panel hidden">
+                <div class="reference-head">
+                  <div>
+                    <strong>Reference audio for real voice cloning</strong>
+                    <p class="helper-text">
+                      Upload a clean Marathi woman WAV sample you have permission to use. Best results come from 6-20 seconds, one speaker, low noise.
+                    </p>
+                  </div>
+                </div>
+                <label class="field" for="referenceAudio">
+                  <span>Reference WAV file</span>
+                  <input id="referenceAudio" type="file" accept=".wav,audio/wav,audio/x-wav" />
+                </label>
+                <p id="referenceFilename" class="reference-filename">No reference file selected yet.</p>
+              </div>
+
+              <div id="settingsGrid" class="form-grid">
+                <label class="field" for="languageSelect">
+                  <span>Language</span>
+                  <select id="languageSelect">
+                    <option value="mr-IN">Marathi - India</option>
+                  </select>
+                </label>
+
+                <div id="voiceField" class="field">
+                  <span>Voice selection</span>
+                  <div id="voiceOptions" class="voice-grid" role="radiogroup" aria-label="Voice selection"></div>
+                </div>
+              </div>
+
+              <div id="prosodySection" class="slider-grid">
+                <label class="field" for="speedControl">
+                  <span>Voice speed</span>
+                  <div class="slider-wrap">
+                    <input id="speedControl" type="range" min="-25" max="25" step="5" value="0" />
+                    <strong id="speedValue">1.00x</strong>
+                  </div>
+                </label>
+
+                <label class="field" for="pitchControl">
+                  <span>Pitch</span>
+                  <div class="slider-wrap">
+                    <input id="pitchControl" type="range" min="-20" max="20" step="5" value="0" />
+                    <strong id="pitchValue">0%</strong>
+                  </div>
+                </label>
+              </div>
+
+              <button id="generateButton" class="primary-button" type="submit">
+                <span class="button-text">Generate Real Voice</span>
+                <span class="button-glow"></span>
+              </button>
+
+              <section id="progressPanel" class="progress-panel hidden" aria-live="polite">
+                <div class="progress-head">
+                  <div>
+                    <p class="eyebrow">Generation Progress</p>
+                    <h4 id="progressTitle">Preparing request</h4>
+                  </div>
+                  <strong id="progressPercent">0%</strong>
+                </div>
+
+                <div class="progress-track">
+                  <div id="progressFill" class="progress-fill"></div>
+                </div>
+
+                <p id="progressMessage" class="progress-message">
+                  Uploading your Marathi text and audio settings.
+                </p>
+
+                <div id="progressSteps" class="progress-steps"></div>
+              </section>
+            </form>
+          </div>
+
+          <aside class="side-stack">
+            <div class="panel glass-card player-panel">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow">Preview</p>
+                  <h3>Audio player</h3>
+                </div>
+              </div>
+
+              <div id="emptyState" class="empty-state">
+                <div class="empty-state-icon">♪</div>
+                <p>Your generated Marathi voice will appear here.</p>
+              </div>
+
+              <div id="playerSection" class="player-section hidden">
+                <div class="audio-meta">
+                  <div>
+                    <p id="audioTitle" class="audio-title">Latest render</p>
+                    <span id="audioSubtitle" class="audio-subtitle">Ready to preview</span>
+                  </div>
+                </div>
+
+                <audio id="audioPlayer" controls preload="metadata"></audio>
+
+                <div class="player-actions">
+                  <button id="playButton" class="secondary-button" type="button">Play</button>
+                  <button id="pauseButton" class="secondary-button" type="button">Pause</button>
+                  <button id="downloadButton" class="secondary-button accent-button" type="button">
+                    Download MP3
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel glass-card history-panel">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow">History</p>
+                  <h3>Recent generations</h3>
+                </div>
+                <button id="clearHistoryButton" class="ghost-button" type="button">Clear</button>
+              </div>
+
+              <div id="historyList" class="history-list"></div>
+            </div>
+          </aside>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
