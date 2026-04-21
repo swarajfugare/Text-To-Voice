@@ -1,238 +1,250 @@
-# TextVoice AI
+# 🎙️ TextVoice AI – Advanced Text to Speech for Indian Languages
 
-Modern Marathi text-to-speech web application with two generation paths:
+<p align="center">
+  <b>Convert Text into Natural Human-Like Voice using AI</b><br>
+  🚀 Real Voice Cloning • ⚡ Fast Neural TTS • 🇮🇳 Indian Language Support
+</p>
 
-- `Studio Real Voice`: a new reference-audio cloning mode for much more human output
-- `Fast Neural`: the original quick Marathi preview mode
+---
 
-## Why This New Version Sounds Better
+<p align="center">
 
-The earlier version used a standard neural Marathi TTS voice. That can be smooth, but it still sounds recognizably AI.
+![Version](https://img.shields.io/badge/version-1.0-blue.svg)
+![Node.js](https://img.shields.io/badge/Node.js-Backend-green)
+![License](https://img.shields.io/badge/license-MIT-orange)
+![Status](https://img.shields.io/badge/status-Active-success)
+![AI Powered](https://img.shields.io/badge/AI-Text%20To%20Speech-purple)
 
-If you want the output to feel closer to a real Marathi woman speaking, you need a real voice reference clip. This upgraded app adds a studio cloning mode that uses an open-source Marathi voice-cloning pipeline with your uploaded WAV sample.
+</p>
 
-## Features
+---
 
-- Marathi Unicode text input with a 2,000 character limit
-- New `Studio Real Voice` mode for more human Marathi output
-- Reference WAV upload flow for voice cloning
-- Fast fallback Marathi neural voices
-- MP3 generation, preview, pause, and download
-- Local generation history in the browser
-- Optional pronunciation hints for difficult Marathi words
-- Responsive modern UI
-- Deployable full-stack Node app, with optional local Python studio pipeline
+## 🚀 About The Project
 
-## Tech Stack
+**TextVoice AI** is a modern **Text-to-Speech (TTS) web application** designed for **Indian languages**, especially Marathi, with **realistic AI voice output**.
 
-- Frontend: HTML, CSS, vanilla JavaScript
-- Backend: Node.js, Express
-- Fast engine: `node-edge-tts`
-- Studio engine: `MahaTTS` via Python bridge
+It offers **two powerful modes**:
 
-## Engines
+🔥 **Studio Real Voice (Voice Cloning)** – Ultra human-like output
+⚡ **Fast Neural Voice** – Instant AI speech generation
 
-### 1. Studio Real Voice
+---
 
-- Best option for human-like output
-- Requires a clean WAV sample of a real Marathi speaker
-- Best for the exact problem you raised: the voice sounding too AI-generated
+## 👨‍💻 Developed By
 
-### 2. Fast Neural
+**Swaraj Fugare**
 
-- Works immediately
-- Faster than studio mode
-- Still sounds more synthetic than voice cloning
+🌐 Portfolio: https://portfolio.matoshreecollection.in
+🏢 Website: https://matoshreecollection.in
 
-## Project Structure
+---
 
-```text
-.
-├── backend/
-│   └── server.js
-├── frontend/
-│   ├── app.js
-│   ├── config.js
-│   ├── index.html
-│   └── styles.css
-├── generated/
-├── studio/
-│   ├── maha_clone.py
-│   └── requirements.txt
-├── uploads/
-├── .env.example
-├── .gitignore
+## 🌟 Key Features
+
+### 🎧 AI Voice Generation
+
+* Convert text → speech instantly
+* Marathi + Indian language support
+* MP3 download & preview
+
+---
+
+### 🔥 Studio Real Voice (Premium Feature)
+
+* Upload real voice sample (WAV)
+* Generate **human-like cloned voice**
+* Best for natural Marathi speech
+
+---
+
+### ⚡ Fast Neural Mode
+
+* No setup required
+* Instant output
+* Lightweight & fast
+
+---
+
+### 🧠 Smart Features
+
+* Pronunciation control
+* Local audio history
+* Modern responsive UI
+* Multi-engine support
+
+---
+
+## 🎬 Demo Preview (Add GIF here)
+
+```id="demo1"
+/assets/demo.gif
+```
+
+---
+
+## 🧩 Tech Stack
+
+| Layer          | Technology            |
+| -------------- | --------------------- |
+| Frontend       | HTML, CSS, JavaScript |
+| Backend        | Node.js, Express      |
+| TTS Engine     | node-edge-tts         |
+| AI Voice Clone | MahaTTS (Python)      |
+
+---
+
+## 📂 Project Structure
+
+```id="code1"
+Text-To-Voice/
+│
+├── backend/        # Node server
+├── frontend/       # UI
+├── studio/         # AI voice cloning (Python)
+├── uploads/        # Input audio
+├── generated/      # Output files
 ├── package.json
 └── README.md
 ```
 
-## Local Setup
+---
 
-### Base app setup
+## ⚙️ Installation Guide
 
-1. Install Node dependencies:
+### 1️⃣ Clone Project
 
-   ```bash
-   npm install
-   ```
+```id="code2"
+git clone https://github.com/swarajfugare/Text-To-Voice.git
+cd Text-To-Voice
+```
 
-2. Copy the environment file:
+---
 
-   ```bash
-   cp .env.example .env
-   ```
+### 2️⃣ Install Dependencies
 
-3. Start the app:
+```id="code3"
+npm install
+```
 
-   ```bash
-   npm run dev
-   ```
+---
 
-4. Open:
+### 3️⃣ Setup Environment
 
-   ```text
-   http://localhost:3001
-   ```
+```id="code4"
+cp .env.example .env
+```
 
-### Studio Real Voice setup
+---
 
-The studio engine is optional but recommended if you want the voice to sound much more real.
+### 4️⃣ Run Project
 
-1. Create and activate a Python environment:
+```id="code5"
+npm run dev
+```
 
-   ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate
-   ```
+👉 Open:
 
-2. Install studio dependencies:
+```id="code6"
+http://localhost:3001
+```
 
-   ```bash
-   pip install -r studio/requirements.txt
-   ```
+---
 
-3. Keep `PYTHON_BIN=python3` in `.env`, or point it to your virtualenv Python if needed.
+## 🔥 Studio Voice Setup (Advanced)
 
-4. In the UI, select `Studio Real Voice`.
+```id="code7"
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r studio/requirements.txt
+```
 
-5. Upload a clean Marathi woman WAV reference clip:
+---
 
-   - 6 to 20 seconds
-   - One speaker only
-   - Very low background noise
-   - Natural speaking pace
+### 🎤 Best Audio Input Guidelines
 
-6. Generate the audio.
+* WAV format
+* 6–20 seconds
+* Single speaker
+* No noise
 
-7. If a word still sounds wrong, use the `Pronunciation hints` box:
+---
 
-   ```text
-   शब्द=उच्चार
-   ```
+## 🧪 API Endpoints
 
-   Example:
+| Endpoint      | Method | Description       |
+| ------------- | ------ | ----------------- |
+| `/api/health` | GET    | Check API         |
+| `/api/voices` | GET    | Get voice options |
+| `/api/tts`    | POST   | Generate audio    |
 
-   ```text
-   API=ए पी आय
-   ऑर्डर=ऑरडर
-   ```
+---
 
-### Studio troubleshooting
+## 🚀 Deployment
 
-- The first `Studio Real Voice` run can take a long time because the Marathi model is downloaded locally.
-- The app now validates the Marathi model cache before loading it and re-downloads only the broken file if needed.
-- If studio mode says it cannot download a valid model file, make sure you have a stable internet connection and enough free disk space.
-- If you want to reset the broken text-to-semantic checkpoint manually, delete `~/.cache/maha_tts/models/Smolie-in/t2s_best.pt` and generate again.
+### 🟢 Easy Deployment
 
-## Quality Guidance
+* Render
+* Railway
+* VPS
 
-If the voice still sounds artificial, the main fix is almost always the reference clip quality:
+---
 
-- Use a real human sample, not an existing AI sample
-- Use clean WAV audio
-- Avoid echo, music, and room noise
-- Use natural Marathi speech, not exaggerated delivery
+### ⚡ Build Commands
 
-The better the reference clip, the more human the result will feel.
+```id="code8"
+npm install
+npm start
+```
 
-## API Endpoints
+---
 
-### `GET /api/health`
+## ⚠️ Important Notes
 
-Returns API health status.
+* Studio mode = slower but realistic
+* Fast mode = quick but AI-like
+* GPU improves performance
 
-### `GET /api/voices`
+---
 
-Returns supported engines, Marathi voices, and the character limit.
+## 🔐 Security
 
-### `POST /api/tts`
+✔ Input validation
+✔ Safe file handling
+✔ Controlled API access
 
-This endpoint now expects `multipart/form-data`.
+---
 
-Fields:
+## 📈 SEO Keywords
 
-- `text`
-- `language`
-- `engine`
-- `voice`
-- `rate`
-- `pitch`
-- `referenceAudio` for studio mode only
+Text to Speech India, Marathi TTS, AI Voice Generator, Voice Cloning App, Text to Voice Converter, Indian AI Voice
 
-## Deployment
+---
 
-### Easiest deployment
+## 📜 License
 
-Deploy the full project as a Node service on Render or Railway.
+MIT License
 
-- Build command: `npm install`
-- Start command: `npm start`
+---
 
-This runs the UI and API from one app.
+## ❤️ Support This Project
 
-### Studio deployment note
+If you like this project:
 
-The studio voice mode depends on Python plus the MahaTTS stack. For deployment, use a service or machine where:
+⭐ Star this repo
+🔗 Share with developers
+🌐 Visit: https://matoshreecollection.in
 
-- Python is available
-- `pip install -r studio/requirements.txt` can run
-- model downloads are allowed
-- more RAM/CPU or a GPU is available for better speed
+---
 
-### Split frontend/backend deployment
+## 🚀 Future Updates
 
-If you want static frontend hosting:
+* Multi-language expansion
+* Voice presets
+* API SaaS version
+* Mobile app
 
-1. Deploy the backend.
-2. Update `frontend/config.js`:
+---
 
-   ```js
-   window.APP_CONFIG = {
-     apiBaseUrl: 'https://your-backend.onrender.com',
-   };
-   ```
-
-3. Set `CORS_ORIGINS` on the backend:
-
-   ```text
-   CORS_ORIGINS=https://your-app.netlify.app
-   ```
-
-4. Deploy the `frontend/` folder to Netlify or Vercel.
-
-## Notes
-
-- Generated audio is cleaned automatically after `AUDIO_TTL_HOURS`
-- Browser history is saved in `localStorage`
-- Studio mode can be much slower than fast mode
-- CPU works, but GPU is strongly preferred for the best experience
-
-## Current Recommendation
-
-If your goal is specifically “make it sound like a real Marathi woman”:
-
-1. Use `Studio Real Voice`
-2. Upload a clean WAV sample of a real Marathi woman voice
-3. Keep text natural and conversational
-
-That is the correct free path for improving this app beyond the generic AI-sounding voice.
+<p align="center">
+  ⚡ Built with passion by <b>Swaraj Fugare</b>
+</p>
